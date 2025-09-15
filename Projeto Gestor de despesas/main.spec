@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('Projeto Gestor de despesas', 'Projeto Gestor de despesas'), ('gestor.db', '.'), ('despesas_recorrentes.json', '.')],
+    datas=[('gestor.db', '.'), ('despesas_recorrentes.json', '.'), ('assets', 'assets')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

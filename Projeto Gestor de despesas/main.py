@@ -6,16 +6,6 @@ import tkinter as tk
 import os
 
 
-root = tk.Tk()
-
-# Caminho absoluto do ícone, usando raw string para evitar problema com espaço e caracteres especiais
-icone_path = r"C:\Users\André Luis\OneDrive\Documentos\Cursos\GitHub\Projeto-Gestor-de-despesas\assets\icones\logo.ico"
-
-# Define o ícone da janela
-root.iconbitmap(icone_path)
-
-root.title("Gestor de Despesas")
-root.geometry("1200x700")
 
 
 class App:

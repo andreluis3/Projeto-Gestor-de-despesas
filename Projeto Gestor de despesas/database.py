@@ -1,12 +1,25 @@
 import sqlite3
+import os
+import sys
 
 class Database:
     def __init__(self, db_name="gestor.db"):
-        self.db_name = db_name
+        self.db_name = self.resource_path(db_name)
         self.create_tables()
+
+    def resource_path(self, relative_path):
+        """Get absolute path to resource, works for dev and for PyInstaller"""
+        try:
+            # PyInstaller creates a temp folder and stores path in _MEIPASS
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+        
+        return os.path.join(base_path, relative_path)
 
     def connect(self):
         return sqlite3.connect(self.db_name)
+    print ("Conectado ao banco de dados com sucesso.")
 
     def create_tables(self):
         conn = self.connect()
@@ -73,5 +86,3 @@ class Database:
         rows = cursor.fetchall()
         conn.close()
         return rows
-
-
