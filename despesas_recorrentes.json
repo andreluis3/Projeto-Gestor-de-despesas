@@ -1,0 +1,42 @@
+[
+  {
+    "descricao": "Netflix",
+    "valor": 59.0,
+    "dia": 20,
+    "mes": 9,
+    "ano": 2025,
+    "categoria": "Academia"
+  },
+  {
+    "descricao": "Academia",
+    "valor": 140.0,
+    "dia": 20,
+    "mes": 9,
+    "ano": 2025,
+    "categoria": "Academia"
+  },
+  {
+    "descricao": "Dentista",
+    "valor": 85.0,
+    "dia": 21,
+    "mes": 9,
+    "ano": 2025,
+    "categoria": "Outros"
+  },
+  {
+    "descricao": "Convenio",
+    "valor": 190.0,
+    "dia": 5,
+    "mes": 11,
+    "ano": 2025,
+    "categoria": "Academia"
+  },
+  {
+    "descricao": "Conta internet",
+    "valor": 100.0,
+    "dia": 25,
+    "mes": 10,
+    "ano": 2025,
+    "categoria": "Internet"
+  }
+]

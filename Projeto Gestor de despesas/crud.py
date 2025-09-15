@@ -25,7 +25,6 @@ class Crud:
         conn.commit()
         conn.close()
 
-   
     def listar_receitas(self):
         conn = self.db.connect()
         cursor = conn.cursor()
@@ -42,17 +41,33 @@ class Crud:
         conn.close()
         return despesas
 
-   
-    def deletar_receita(self, nome):
+    def deletar_receita(self, id_receita):
         conn = self.db.connect()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM receitas WHERE nome = ?", (nome,))
+        cursor.execute("DELETE FROM receitas WHERE id = ?", (id_receita,))
+        conn.commit()
+        conn.close()
+        
+
+    def deletar_despesa(self, id_despesa):
+        conn = self.db.connect()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM despesas WHERE id = ?", (id_despesa,))
         conn.commit()
         conn.close()
 
-    def deletar_despesa(self, nome):
+    def buscar_receita_por_nome(self, nome):
         conn = self.db.connect()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM despesas WHERE nome = ?", (nome,))
-        conn.commit()
+        cursor.execute("SELECT id FROM receitas WHERE nome = ?", (nome,))
+        resultado = cursor.fetchone()
         conn.close()
+        return resultado[0] if resultado else None
+
+    def buscar_despesa_por_nome(self, nome):
+        conn = self.db.connect()
+        cursor = conn.cursor()
+        cursor.execute("SELECT id FROM despesas WHERE nome = ?", (nome,))
+        resultado = cursor.fetchone()
+        conn.close()
+        return resultado[0] if resultado else None
