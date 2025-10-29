@@ -1,5 +1,4 @@
 import tkinter as tk
-import customtkinter as ctk
 from tkinter import ttk, messagebox
 from crud import Crud
 from dashboard import Dashboard

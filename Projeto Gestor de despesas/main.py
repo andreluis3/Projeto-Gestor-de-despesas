@@ -5,9 +5,6 @@ from calendario import CalendarioDespesas
 import tkinter as tk
 import os
 
-
-
-
 class App:
     def __init__(self):
         self.db = Database()
